@@ -48,9 +48,10 @@ Quickstart (database)
         description "Role applied to Oracle quickstart test machines."
         run_list 'recipe[oracle]', 'recipe[oracle::logrotate_alert_log]', 'recipe[oracle::logrotate_listener]', 'recipe[oracle::createdb]'
         override_attributes :oracle => {:rdbms => {:latest_patch => {:url => 'https://secure.server.localdomain/path/to/p16619892_112030_Linux-x86-64.zip'}, :opatch_update_url => 'https://secure.server.localdomain/path/to/p6880880_112000_Linux-x86-64.zip', :install_files => ['https://secure.server.localdomain/path/to/p10404530_112030_Linux-x86-64_1of7.zip', 'https://secure.server.localdomain/path/to/p10404530_112030_Linux-x86-64_2of7.zip']}} 
-
+  
 * For 12c install, add `node[:oracle][:rdbms][:dbbin_version]`
   override_attribute to the role.
+
 
         name "ora_12c_quickstart"
         description "Role applied to Oracle 12c quickstart test machines."
